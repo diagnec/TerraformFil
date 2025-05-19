@@ -18,7 +18,7 @@ pipeline {
       }
     }
 
-   
+
     stage('Deploy with Terraform') {
       steps {
         dir('.') {
@@ -26,4 +26,15 @@ pipeline {
           sh 'sudo terraform apply -auto-approve'
         }
       }
-        
+    }
+  }
+
+  post {
+    success {
+      echo "✅ Déploiement réussi via Terraform et images récupérées"
+    }
+    failure {
+      echo "❌ Échec du déploiement"
+    }
+  }
+}
