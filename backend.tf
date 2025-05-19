@@ -22,7 +22,7 @@ resource "kubernetes_deployment" "backend" {
       spec {
         container {
           name  = "backend"
-          image = "cheikh9708/backkk"
+          image = "ibrahim372/bk"
           image_pull_policy = "Always"
 
           port {
@@ -64,3 +64,4 @@ resource "kubernetes_service" "backend" {
 
     type = "NodePort"
   }
+}
