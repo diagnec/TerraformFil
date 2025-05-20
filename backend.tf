@@ -63,4 +63,10 @@ resource "kubernetes_service" "backend" {
     }
 
     type = "NodePort"
+
+
+
+
+
   }
+}
